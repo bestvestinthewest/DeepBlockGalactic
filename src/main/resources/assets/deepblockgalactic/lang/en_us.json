@@ -1,6 +1,20 @@
 {
 	"item.deepblockgalactic.nitra": "Nitra",
 	"item.deepblockgalactic.morkite": "Morkite",
-	"item.deepblockgalactic.gold": "Dwarven Gold"
+	"item.deepblockgalactic.gold": "Dwarven Gold",
+	"item.deepblockgalactic.blackout_stout": "Blackout Stout",
+	"item.deepblockgalactic.empty_mug": "Empty Mug",
 	
+	"item.deepblockgalactic.satchel_charge": "Satchel Charge",
+	"item.deepblockgalactic.detonator": "C4 Detonator",
+	"item.deepblockgalactic.grappling_hook": "Grappling Hook",
+	
+	
+	
+	"itemGroup.dbgtab": "Deep Block Galactic",
+	
+	
+	"block.deepblockgalactic.nitra_ore": "Nitra Ore",
+	"block.deepblockgalactic.gold_ore": "Dwarven Gold Ore",
+	"block.deepblockgalactic.morkite_ore": "Morkite Ore"
 }
