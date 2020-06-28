@@ -24,5 +24,4 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.SATCHEL_CHARGE_ENTITY.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer()));
 		LOGGER.debug("Deep Block Galactic Client Mod Event Subscriber has been set up!");
 	}
-
 }
