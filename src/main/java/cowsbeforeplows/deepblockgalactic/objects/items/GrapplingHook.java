@@ -21,7 +21,6 @@ public class GrapplingHook extends Item{
 		if (!worldIn.isRemote) {
 			HookEntity hook = HookEntity.getHook(playerIn);
 			if (hook != null) {
-//				hook.reel();
 			}
 			
 			else {

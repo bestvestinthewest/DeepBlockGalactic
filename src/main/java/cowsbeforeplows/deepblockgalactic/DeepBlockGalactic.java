@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import cowsbeforeplows.deepblockgalactic.init.BlockInit;
 import cowsbeforeplows.deepblockgalactic.init.ItemInit;
 import cowsbeforeplows.deepblockgalactic.init.ModEntityTypes;
+import cowsbeforeplows.deepblockgalactic.init.SoundInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.item.BlockItem;
@@ -42,9 +43,11 @@ public class DeepBlockGalactic {
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setup);
         
+		
         ItemInit.ITEMS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
         ModEntityTypes.ENTITY_TYPES.register(modEventBus);
+        SoundInit.SOUNDS.register(modEventBus);
         
         instance = this;
         MinecraftForge.EVENT_BUS.register(this);

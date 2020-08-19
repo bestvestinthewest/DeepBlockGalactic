@@ -1,0 +1,76 @@
+{
+	"entity.satchel_charge.beep": {
+		"category": "entity",
+		"subtitle": "entity.satchel_charge.beep",
+		"sounds": [
+			{
+				"name": "deepblockgalactic:entity/entity.satchel_charge.beep1",
+				"stream": true
+			},
+			{
+				"name": "deepblockgalactic:entity/entity.satchel_charge.beep2",
+				"stream": true
+			},
+			{
+				"name": "deepblockgalactic:entity/entity.satchel_charge.beep3",
+				"stream": true
+			}
+		]
+	},
+	
+	"item.detonator.detonate": {
+		"catergory": "item",
+		"subtitle": "item.detonator.detonate",
+		"sounds": [
+			{
+				"name": "deepblockgalactic:item/item.detonator.detonate",
+				"stream": true
+			}
+		]
+		},
+		
+	"item.impact_axe.axe_throw": {
+		"catergory": "item",
+		"subtitle": "item.impact_axe.axe_throw",
+		"sounds": [
+			{
+				"name": "deepblockgalactic:item/item.impact_axe.axe_throw",
+				"stream": true
+			}
+		]
+		},
+		
+	"entity.impact_axe.axe_impact_block": {
+		"category": "entity",
+		"subtitle": "entity.impact_axe.axe_impact_block",
+		"sounds": [
+			{
+				"name": "deepblockgalactic:entity/entity.impact_axe.axe_impact_block1",
+				"stream": true
+			},
+			{
+				"name": "deepblockgalactic:entity/entity.impact_axe.axe_impact_block2",
+				"stream": true
+			}
+		]
+		},
+			"entity.impact_axe.axe_impact_entity": {
+		"category": "entity",
+		"subtitle": "entity.impact_axe.axe_impact_entity",
+		"sounds": [
+			{
+				"name": "deepblockgalactic:entity/entity.impact_axe.axe_impact_entity1",
+				"stream": true
+			},
+			{
+				"name": "deepblockgalactic:entity/entity.impact_axe.axe_impact_entity2",
+				"stream": true
+			},
+			{
+				"name": "deepblockgalactic:entity/entity.impact_axe.axe_impact_entity3",
+				"stream": true
+			}
+		]
+	}
+	
+}
