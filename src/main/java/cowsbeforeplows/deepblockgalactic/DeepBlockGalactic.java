@@ -36,8 +36,6 @@ public class DeepBlockGalactic {
 	public static final String MOD_ID = "deepblockgalactic";
 	public static DeepBlockGalactic instance;
 	
-	
-	
 	public DeepBlockGalactic() {
 		
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
