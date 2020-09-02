@@ -16,7 +16,6 @@ public class SatchelCharge extends Item{
 
 	public SatchelCharge(Properties properties) {
 		super(properties);
-		
 	}
 	
 	@Override

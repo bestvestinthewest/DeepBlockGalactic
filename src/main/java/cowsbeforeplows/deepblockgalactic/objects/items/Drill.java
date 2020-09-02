@@ -36,7 +36,6 @@ public class Drill extends PickaxeItem {
 
 	@Override
 	public boolean canHarvestBlock(BlockState blockIn) {
-		Block block = blockIn.getBlock();
 		int i = this.getTier().getHarvestLevel();
 		if (blockIn.getHarvestTool() == net.minecraftforge.common.ToolType.PICKAXE || blockIn.getHarvestTool() == net.minecraftforge.common.ToolType.SHOVEL) {
 			return i >= blockIn.getHarvestLevel();

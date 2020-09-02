@@ -32,7 +32,8 @@ public class Detonator extends Item {
 		List<SatchelChargeEntity> charges = worldIn.getEntitiesWithinAABB(SatchelChargeEntity.class, search);
 
 		for(SatchelChargeEntity charge: charges) {
-			charge.explode();
+			if (playerIn.getUniqueID() == charge.getOwner())
+				charge.explode();
 		}
 
 		if (charges.isEmpty()) {

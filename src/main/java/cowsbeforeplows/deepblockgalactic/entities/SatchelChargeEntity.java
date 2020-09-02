@@ -33,7 +33,6 @@ public class SatchelChargeEntity extends ProjectileItemEntity {
 
 	private UUID thrower;
 	
-	
 	public SatchelChargeEntity(EntityType<? extends ProjectileItemEntity> type, World worldIn) {
 		super(type, worldIn);
 	}
@@ -41,7 +40,7 @@ public class SatchelChargeEntity extends ProjectileItemEntity {
 	public SatchelChargeEntity(World worldIn, PlayerEntity playerIn) {
 		super(ModEntityTypes.SATCHEL_CHARGE_ENTITY.get(), worldIn);
 		this.thrower = playerIn.getUniqueID();
-//		DeepBlockGalactic.LOGGER.debug("Satchel Charge Thrower: " + thrower.toString());
+		DeepBlockGalactic.LOGGER.debug("Satchel Charge Thrower: " + thrower.toString());
 	}
 	
 	public SatchelChargeEntity(World worldIn, double x, double y, double z) {
