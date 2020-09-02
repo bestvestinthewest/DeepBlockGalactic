@@ -5,17 +5,15 @@ import cowsbeforeplows.deepblockgalactic.init.ItemInit;
 import cowsbeforeplows.deepblockgalactic.init.ModEntityTypes;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.IRendersAsItem;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.DamagingProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.EntityRayTraceResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
@@ -58,7 +56,12 @@ public class EPCNormalEntity extends ProjectileItemEntity {
 		}
 	}
 	
-
+//	public void launch(PlayerEntity playerIn) {
+//		Vec3d vec3d = playerIn.getLookVec();
+//		this.setMotion(vec3d);
+//
+//	}
+	
 	@Override
 	protected Item getDefaultItem() {
 		return ItemInit.EPC_SHOT.get();

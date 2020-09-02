@@ -30,7 +30,9 @@ public class Detonator extends Item {
 		AxisAlignedBB search = new AxisAlignedBB(playerIn.getPosX() - 64, playerIn.getPosY() - 64, playerIn.getPosZ() - 64, playerIn.getPosX() + 64, playerIn.getPosY() + 64, playerIn.getPosZ() + 64);
 
 		List<SatchelChargeEntity> charges = worldIn.getEntitiesWithinAABB(SatchelChargeEntity.class, search);
-
+		
+		worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundInit.DETONATOR.get(), SoundCategory.BLOCKS, 0.4f, 1.0f);
+		
 		for(SatchelChargeEntity charge: charges) {
 			if (playerIn.getUniqueID() == charge.getOwner())
 				charge.explode();
@@ -41,7 +43,6 @@ public class Detonator extends Item {
 		}
 		
 		else {
-			worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundInit.DETONATOR.get(), SoundCategory.BLOCKS, 0.4f, 1.0f);
 			
 			if (!playerIn.abilities.isCreativeMode) {
 				return ActionResult.resultConsume(itemstack);

@@ -1,27 +1,32 @@
 package cowsbeforeplows.deepblockgalactic;
 
+import java.util.UUID;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import cowsbeforeplows.deepblockgalactic.init.BiomeInit;
 import cowsbeforeplows.deepblockgalactic.init.BlockInit;
+import cowsbeforeplows.deepblockgalactic.init.DimInit;
 import cowsbeforeplows.deepblockgalactic.init.ItemInit;
 import cowsbeforeplows.deepblockgalactic.init.ModEntityTypes;
 import cowsbeforeplows.deepblockgalactic.init.SoundInit;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.dimension.DimensionType;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -36,6 +41,8 @@ public class DeepBlockGalactic {
 	public static final String MOD_ID = "deepblockgalactic";
 	public static DeepBlockGalactic instance;
 	
+	public static final ResourceLocation SPACE_RIG_TYPE = new ResourceLocation(MOD_ID, "space_rig");
+	
 	public DeepBlockGalactic() {
 		
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -45,6 +52,9 @@ public class DeepBlockGalactic {
         ItemInit.ITEMS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
         ModEntityTypes.ENTITY_TYPES.register(modEventBus);
+        BiomeInit.BIOMES.register(modEventBus);
+        DimInit.CHUNKS_GEN.register(modEventBus);
+        DimInit.DIMENSIONS.register(modEventBus);
         SoundInit.SOUNDS.register(modEventBus);
         
         instance = this;
