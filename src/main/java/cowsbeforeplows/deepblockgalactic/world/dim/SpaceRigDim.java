@@ -1,4 +1,4 @@
-package cowsbeforeplows.deepblockgalactic.dim;
+package cowsbeforeplows.deepblockgalactic.world.dim;
 
 
 import javax.annotation.Nullable;

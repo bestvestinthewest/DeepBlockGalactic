@@ -1,4 +1,4 @@
-package cowsbeforeplows.deepblockgalactic.dim;
+package cowsbeforeplows.deepblockgalactic.world;
 
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.provider.BiomeProvider;

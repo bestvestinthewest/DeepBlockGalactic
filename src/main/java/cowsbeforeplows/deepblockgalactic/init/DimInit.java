@@ -1,8 +1,8 @@
 package cowsbeforeplows.deepblockgalactic.init;
 
 import cowsbeforeplows.deepblockgalactic.DeepBlockGalactic;
-import cowsbeforeplows.deepblockgalactic.dim.SpaceRigChunkGen;
-import cowsbeforeplows.deepblockgalactic.dim.SpaceRigDim;
+import cowsbeforeplows.deepblockgalactic.world.SpaceRigChunkGen;
+import cowsbeforeplows.deepblockgalactic.world.dim.SpaceRigDim;
 import net.minecraft.world.gen.ChunkGeneratorType;
 import net.minecraft.world.gen.GenerationSettings;
 import net.minecraftforge.common.ModDimension;

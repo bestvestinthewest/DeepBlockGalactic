@@ -40,7 +40,6 @@ public class SatchelChargeEntity extends ProjectileItemEntity {
 	public SatchelChargeEntity(World worldIn, PlayerEntity playerIn) {
 		super(ModEntityTypes.SATCHEL_CHARGE_ENTITY.get(), worldIn);
 		this.thrower = playerIn.getUniqueID();
-		DeepBlockGalactic.LOGGER.debug("Satchel Charge Thrower: " + thrower.toString());
 	}
 	
 	public SatchelChargeEntity(World worldIn, double x, double y, double z) {
@@ -76,22 +75,22 @@ public class SatchelChargeEntity extends ProjectileItemEntity {
 	public void tick() {
 		super.tick();
 
-		if (this.world.isRemote()) {
-			this.playSound(SoundInit.SATCHEL_CHARGE_BEEP.get(), 0.5f, 1.0f);
+		if (!this.world.isRemote() && ticksExisted % 10 == 0) {
+			this.playSound(SoundInit.SATCHEL_CHARGE_BEEP.get(), 0.05f, 1.0f);
 		}
 	}
+	
+    public UUID getOwner() {
+    	return this.thrower;
+    }
 
     @Override
     public IPacket<?> createSpawnPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
     
-    public UUID getOwner() {
-    	return this.thrower;
-    }
-
 	public void explode() {
-		float f = 6.0F;
+		float f = 7.0F;
 		this.world.createExplosion(this, this.getPosX(), this.getPosYHeight(0.0625D), this.getPosZ(), f, false, Explosion.Mode.BREAK);
 		this.remove();
 	}

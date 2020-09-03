@@ -1,5 +1,7 @@
 package cowsbeforeplows.deepblockgalactic.objects.items;
 
+import cowsbeforeplows.deepblockgalactic.DeepBlockGalactic;
+import cowsbeforeplows.deepblockgalactic.init.DimInit;
 import cowsbeforeplows.deepblockgalactic.init.ItemInit;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.LivingEntity;
@@ -14,6 +16,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.items.ItemHandlerHelper;
 
 public class BlackoutStout extends Item {
@@ -27,6 +30,7 @@ public class BlackoutStout extends Item {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
 		PlayerEntity playerentity = entityLiving instanceof PlayerEntity ? (PlayerEntity)entityLiving : null;
 
+		int delay = (int)worldIn.getGameTime();
 		
 		if(playerentity instanceof ServerPlayerEntity) {
 			CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayerEntity)playerentity, stack);
@@ -42,6 +46,7 @@ public class BlackoutStout extends Item {
 	         }
 		}
 		
+		entityLiving.changeDimension(DimensionType.byName(DeepBlockGalactic.SPACE_RIG_TYPE));	
 		return super.onItemUseFinish(stack, worldIn, entityLiving);
 	}
 	

@@ -1,4 +1,4 @@
-package cowsbeforeplows.deepblockgalactic.dim;
+package cowsbeforeplows.deepblockgalactic.world.biome;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;

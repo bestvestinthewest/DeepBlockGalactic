@@ -1,7 +1,7 @@
 package cowsbeforeplows.deepblockgalactic.init;
 
 import cowsbeforeplows.deepblockgalactic.DeepBlockGalactic;
-import cowsbeforeplows.deepblockgalactic.dim.SpaceRigBiome;
+import cowsbeforeplows.deepblockgalactic.world.biome.SpaceRigBiome;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;

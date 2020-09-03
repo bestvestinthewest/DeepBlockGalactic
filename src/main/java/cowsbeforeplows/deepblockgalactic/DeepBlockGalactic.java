@@ -43,6 +43,7 @@ public class DeepBlockGalactic {
 	
 	public static final ResourceLocation SPACE_RIG_TYPE = new ResourceLocation(MOD_ID, "space_rig");
 	
+	
 	public DeepBlockGalactic() {
 		
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
