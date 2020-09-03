@@ -25,22 +25,5 @@ public class Teleporter implements ITeleporter {
 		Entity repositionedEntity = repositionEntity.apply(false);
 		repositionedEntity.setPositionAndUpdate(x, y, z);
 		return repositionedEntity;
-	}
-	
-	public static void teleportEntity(Entity entity, DimensionType type, BlockPos blockPos) {
-        teleportEntity(entity, type, blockPos.getX() + 0.5, blockPos.getY() + 0.75, blockPos.getZ() + 0.5);
-    }
-	
-	public static void teleportEntity(Entity entity, DimensionType type, double x, double y, double z) {
-	        Teleporter simpleTeleporter = new Teleporter(x, y, z);
-	        entity.changeDimension(type, simpleTeleporter);
-	}
-	
-	public static void toSpaceRig(PlayerEntity playerEntity) {
-		if(playerEntity.world instanceof ServerWorld) {
-			
-		}
-    }
-	
-
+	}	
 }

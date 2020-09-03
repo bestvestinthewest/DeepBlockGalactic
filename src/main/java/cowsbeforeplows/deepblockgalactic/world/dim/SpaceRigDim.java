@@ -37,22 +37,16 @@ public class SpaceRigDim extends Dimension {
 		return null;
 		
 	}
-	
-    @Nullable
-    @Override
-    public BlockPos findSpawn(int posX, int posZ, boolean checkValid) {
-        return null;
-    }
 
     @Override
     public float calculateCelestialAngle(long worldTime, float partialTicks) {
         return 0.5f;
     }
 
-//    @Override
-//    public boolean isDaytime() {
-//        return false;
-//    }
+    @Override
+    public boolean isDaytime() {
+        return false;
+    }
     
     @Override
     public float getCloudHeight() {
@@ -71,7 +65,6 @@ public class SpaceRigDim extends Dimension {
 
     @Override
     public Vec3d getFogColor(float celestialAngle, float partialTicks) {
-        int i = 10518688;
         float f = MathHelper.cos(celestialAngle * ((float)Math.PI * 2F)) * 2.0F + 0.5F;
         f = MathHelper.clamp(f, 0.0F, 1.0F);
         float f1 = 0.627451F;
@@ -105,6 +98,11 @@ public class SpaceRigDim extends Dimension {
 
     @Override
     public boolean hasSkyLight() {
-        return false;
+        return true;
     }
+
+	@Override
+	public BlockPos findSpawn(int posX, int posZ, boolean checkValid) {
+		return null;
+	}
 }

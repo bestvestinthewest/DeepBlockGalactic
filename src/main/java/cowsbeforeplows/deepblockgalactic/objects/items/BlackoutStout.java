@@ -1,8 +1,8 @@
 package cowsbeforeplows.deepblockgalactic.objects.items;
 
 import cowsbeforeplows.deepblockgalactic.DeepBlockGalactic;
-import cowsbeforeplows.deepblockgalactic.init.DimInit;
 import cowsbeforeplows.deepblockgalactic.init.ItemInit;
+import cowsbeforeplows.deepblockgalactic.util.DimTeleporter;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -46,7 +46,7 @@ public class BlackoutStout extends Item {
 	         }
 		}
 		
-		entityLiving.changeDimension(DimensionType.byName(DeepBlockGalactic.SPACE_RIG_TYPE));	
+		DimTeleporter.toSpaceRig(playerentity);
 		return super.onItemUseFinish(stack, worldIn, entityLiving);
 	}
 	
