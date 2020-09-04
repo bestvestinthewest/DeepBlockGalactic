@@ -1,33 +1,43 @@
 package cowsbeforeplows.deepblockgalactic.entities;
 
+import cowsbeforeplows.deepblockgalactic.init.BlockInit;
 import cowsbeforeplows.deepblockgalactic.init.ModEntityTypes;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.ProjectileItemEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.Item;
-import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class FlareBoltEntity extends ProjectileItemEntity {
+public class FlareBoltEntity extends AbstractArrowEntity {
 
-	public FlareBoltEntity(EntityType<? extends ProjectileItemEntity> type, World worldIn) {
-		super(type, worldIn);
+	private final Item item;
+	private boolean isLit;
+	private BlockPos flareBlockPos;
+
+	
+	public FlareBoltEntity(LivingEntity shooter, World world, Item item) {
+		super(ModEntityTypes.FLARE_BOLT_ENTITY.get(), world);
+		this.item = item;
+		this.isLit = false;
 	}
 
-	public FlareBoltEntity(PlayerEntity playerIn, World worldIn) {
-		super(ModEntityTypes.FLARE_BOLT_ENTITY.get(), playerIn, worldIn);
+	@Override
+	protected ItemStack getArrowStack() {
+		return new ItemStack(item);
 	}
 	
 	@Override
-	protected Item getDefaultItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected void onImpact(RayTraceResult result) {
-		// TODO Auto-generated method stub
+	public void tick() {
+		super.tick();
 		
+		if (this.inGround && isLit == false) {
+			flareBlockPos = new BlockPos(this.getPosX(), this.getPosY(), this.getPosZ());
+			this.world.setBlockState(flareBlockPos, BlockInit.FLARE_BLOCK.get().getDefaultState());
+			isLit = true;
+		}
 	}
+	
 
 }

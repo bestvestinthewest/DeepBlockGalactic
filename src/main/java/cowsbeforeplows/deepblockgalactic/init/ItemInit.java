@@ -6,6 +6,7 @@ import cowsbeforeplows.deepblockgalactic.objects.items.Detonator;
 import cowsbeforeplows.deepblockgalactic.objects.items.Drill;
 import cowsbeforeplows.deepblockgalactic.objects.items.EPC;
 import cowsbeforeplows.deepblockgalactic.objects.items.Flare;
+import cowsbeforeplows.deepblockgalactic.objects.items.FlareBolt;
 import cowsbeforeplows.deepblockgalactic.objects.items.FlareGun;
 import cowsbeforeplows.deepblockgalactic.objects.items.GrapplingHook;
 import cowsbeforeplows.deepblockgalactic.objects.items.ImpactAxe;
@@ -31,6 +32,8 @@ public class ItemInit {
 	public static final RegistryObject<EPC> EPC = ITEMS.register("epc", () -> new EPC(new Item.Properties().group(DeepBlockGalactic.TAB).maxStackSize(1)));
 	public static final RegistryObject<Drill> DRILL = ITEMS.register("drill", () -> new Drill(ItemTier.DIAMOND, 6, 2.8f, new Item.Properties().group(DeepBlockGalactic.TAB)));
 	public static final RegistryObject<Flare> FLARE = ITEMS.register("flare", () -> new Flare(new Item.Properties().group(DeepBlockGalactic.TAB)));
+	public static final RegistryObject<FlareBolt> FLARE_BOLT = ITEMS.register("flare_bolt", () -> new FlareBolt(new Item.Properties().group(DeepBlockGalactic.TAB)));
+	
 	
 	// Minerals
 	public static final RegistryObject<Item> NITRA = ITEMS.register("nitra", () -> new Item(new Item.Properties().group(DeepBlockGalactic.TAB)));
