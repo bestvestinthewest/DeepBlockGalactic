@@ -16,20 +16,7 @@ public class GrapplingHook extends Item{
 	}
 	
 	public ActionResult<ItemStack> onItemRightClicK(World worldIn, PlayerEntity playerIn, Hand handIn) {
-		ItemStack itemstack = playerIn.getHeldItem(handIn);
-		
-		if (!worldIn.isRemote) {
-			HookEntity hook = HookEntity.getHook(playerIn);
-			if (hook != null) {
-			}
-			
-			else {
-//				hook = new EntityHook(EntityType<>, worldIn, playerIn, itemstack);
-				playerIn.getEntityWorld().addEntity(hook);
-				
-			}
-		}
-		
+
 		return ActionResult.resultSuccess(playerIn.getHeldItem(handIn));
 	}
 

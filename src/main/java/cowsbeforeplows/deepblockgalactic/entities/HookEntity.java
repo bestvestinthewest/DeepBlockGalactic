@@ -15,21 +15,12 @@ import net.minecraft.world.World;
 
 public class HookEntity extends Entity {
 	
-	private static final HashMap<LivingEntity, HookEntity> hooks = new HashMap<>();
-	private static final DataParameter<Float> LENGTH = EntityDataManager.createKey(HookEntity.class, DataSerializers.FLOAT);
-    private static final DataParameter<Byte> STATE = EntityDataManager.createKey(HookEntity.class, DataSerializers.BYTE);
-    
-    private ItemStack itemstack;
-	
+    	
 	private LivingEntity shooter;
 
 	public HookEntity(EntityType<?> entityTypeIn, World worldIn) {
 		super(entityTypeIn, worldIn);
 	}
-	
-    public static HookEntity getHook(LivingEntity entity) {
-        return hooks.get(entity);
-    }
 
 	@Override
 	protected void registerData() {

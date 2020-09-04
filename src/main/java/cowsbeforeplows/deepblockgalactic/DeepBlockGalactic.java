@@ -13,6 +13,7 @@ import cowsbeforeplows.deepblockgalactic.init.DimInit;
 import cowsbeforeplows.deepblockgalactic.init.ItemInit;
 import cowsbeforeplows.deepblockgalactic.init.ModEntityTypes;
 import cowsbeforeplows.deepblockgalactic.init.SoundInit;
+import cowsbeforeplows.deepblockgalactic.objects.blocks.FlareBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -67,10 +68,18 @@ public class DeepBlockGalactic {
 		final IForgeRegistry<Item> registry = event.getRegistry();
 		
 		BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
-			final Item.Properties properties = new Item.Properties().group(TAB);
-			final BlockItem blockItem = new BlockItem(block, properties);
-			blockItem.setRegistryName(block.getRegistryName());
-			registry.register(blockItem);
+			if (block instanceof FlareBlock) {
+				final Item.Properties properties = new Item.Properties();
+				final BlockItem blockItem = new BlockItem(block, properties);
+				blockItem.setRegistryName(block.getRegistryName());
+				registry.register(blockItem);
+			}
+			else {
+				final Item.Properties properties = new Item.Properties().group(TAB);
+				final BlockItem blockItem = new BlockItem(block, properties);
+				blockItem.setRegistryName(block.getRegistryName());
+				registry.register(blockItem);
+			}
 		});
 
 		LOGGER.debug("DBG BlockItems Registered");

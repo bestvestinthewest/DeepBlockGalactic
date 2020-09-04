@@ -4,6 +4,7 @@ import cowsbeforeplows.deepblockgalactic.DeepBlockGalactic;
 import cowsbeforeplows.deepblockgalactic.entities.EPCChargedEntity;
 import cowsbeforeplows.deepblockgalactic.entities.EPCNormalEntity;
 import cowsbeforeplows.deepblockgalactic.entities.FlareBoltEntity;
+import cowsbeforeplows.deepblockgalactic.entities.FlareEntity;
 import cowsbeforeplows.deepblockgalactic.entities.ImpactAxeEntity;
 import cowsbeforeplows.deepblockgalactic.entities.SatchelChargeEntity;
 import net.minecraft.entity.EntityClassification;
@@ -24,6 +25,6 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<EPCChargedEntity>> EPC_CHARGED_ENTITY = ENTITY_TYPES.register("epc_charged", () -> EntityType.Builder.<EPCChargedEntity>create(EPCChargedEntity::new, EntityClassification.MISC).size(10.0f, 10.0f).build("epc_charged"));
 	public static final RegistryObject<EntityType<EPCNormalEntity>> EPC_NORMAL_ENTITY = ENTITY_TYPES.register("epc_normal", () -> EntityType.Builder.<EPCNormalEntity>create(EPCNormalEntity::new, EntityClassification.MISC).size(1.0f, 1.0f).build("epc_normal"));
 //	public static final RegistryObject<EntityType<HookEntity>> HOOK_ENTITY = ENTITY_TYPES.register("hook_entity", () -> EntityType.Builder.create(HookEntity::new, EntityClassification.MISC).size(0.5F, 0.5F).build(new ResourceLocation(DeepBlockGalactic.MOD_ID, "hook_entity").toString()));
-	
+	public static final RegistryObject<EntityType<FlareEntity>> FLARE_ENTITY = ENTITY_TYPES.register("flare", () -> EntityType.Builder.<FlareEntity>create(FlareEntity::new, EntityClassification.MISC).size(0.5f, 0.5f).build("flare"));
 	
 }
