@@ -43,6 +43,7 @@ public class BlackoutStout extends Item {
 	         playerentity.addStat(Stats.ITEM_USED.get(this));
 	         if (!playerentity.abilities.isCreativeMode) {
 	            stack.shrink(1);
+	            playerentity.inventory.addItemStackToInventory(new ItemStack(ItemInit.EMPTY_MUG.get()));
 	         }
 		}
 		
