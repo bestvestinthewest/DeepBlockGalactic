@@ -1,9 +1,10 @@
-package cowsbeforeplows.deepblockgalactic.util;
+package cowsbeforeplows.deepblockgalactic.client;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import cowsbeforeplows.deepblockgalactic.DeepBlockGalactic;
+import cowsbeforeplows.deepblockgalactic.client.render.FlareBoltRenderer;
 import cowsbeforeplows.deepblockgalactic.init.ModEntityTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
@@ -26,6 +27,7 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.EPC_NORMAL_ENTITY.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer(), 1.0f, false));
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.EPC_CHARGED_ENTITY.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer(), 3.0f, false));
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FLARE_ENTITY.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer(), 1.0f, false));
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FLARE_BOLT_ENTITY.get(), FlareBoltRenderer::new);
 		
 		LOGGER.debug("Deep Block Galactic Client Mod Event Subscriber has been set up!");
 	}

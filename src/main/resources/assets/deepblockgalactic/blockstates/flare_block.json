@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"": {
-			"model": "deepblockgalactic:block/flare"
+			"model": "deepblockgalactic:block/flare_block"
 		}
 	}
 }

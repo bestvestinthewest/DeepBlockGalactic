@@ -42,7 +42,7 @@ public class FlareBlock extends Block implements IWaterLoggable {
 	@Override
 	@Nonnull
     public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
-    	return world instanceof ServerWorld ? VoxelShapes.empty() : VoxelShapes.fullCube();
+    	return VoxelShapes.empty();
     }
 	
 	@Override

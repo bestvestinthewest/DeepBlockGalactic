@@ -25,4 +25,7 @@ public class SoundInit {
 	
 	public static final RegistryObject<SoundEvent> DETONATOR = SOUNDS.register("item.detonator.detonate", 
 			() -> new SoundEvent(new ResourceLocation(DeepBlockGalactic.MOD_ID, "item.detonator.detonate")));
+	
+	public static final RegistryObject<SoundEvent> FLARE_GUN_SHOT = SOUNDS.register("item.flare_gun.shoot",
+			() -> new SoundEvent(new ResourceLocation(DeepBlockGalactic.MOD_ID, "item.flare_gun.shoot")));
 }
