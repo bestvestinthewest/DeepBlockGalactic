@@ -9,7 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class SoundInit {
 
-	public static final DeferredRegister<SoundEvent> SOUNDS = new DeferredRegister<>(ForgeRegistries.SOUND_EVENTS, DeepBlockGalactic.MOD_ID);
+	public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, DeepBlockGalactic.MOD_ID);
 
 	public static final RegistryObject<SoundEvent> AXE_IMPACT_BLOCK = SOUNDS.register("entity.impact_axe.axe_impact_block",
 			() -> new SoundEvent(new ResourceLocation(DeepBlockGalactic.MOD_ID, "entity.impact_axe.axe_impact_block")));

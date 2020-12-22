@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModEntityTypes {
 
-	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.ENTITIES, DeepBlockGalactic.MOD_ID);
+	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, DeepBlockGalactic.MOD_ID);
 	
 	
 	//Support Tool Entities

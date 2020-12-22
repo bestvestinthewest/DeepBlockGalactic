@@ -29,7 +29,7 @@ public class EPC extends Item {
 				if (!worldIn.isRemote) {
 					EPCNormalEntity epcNormal = new EPCNormalEntity(worldIn, playerIn);
 					epcNormal.setPosition(playerIn.getPosX(), playerIn.getPosY() + 1.5D, playerIn.getPosZ());
-					epcNormal.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0, 1.0f, 0.0f);
+					epcNormal.shoot(playerIn.rotationPitch, playerIn.rotationYaw, 0, 1.0f, 0.0f);
 					worldIn.addEntity(epcNormal);				
 				}
 
@@ -40,7 +40,7 @@ public class EPC extends Item {
 				if (!worldIn.isRemote) {
 					EPCChargedEntity epcCharged = new EPCChargedEntity(worldIn, playerIn);
 					epcCharged.setPosition(playerIn.getPosX(), playerIn.getPosY() + 1.5D, playerIn.getPosZ());
-					epcCharged.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0, 0.25f, 0.0f);
+					epcCharged.shoot(playerIn.rotationPitch, playerIn.rotationYaw, 0, 0.25f, 0.0f);
 					worldIn.addEntity(epcCharged);
 				}
 			}

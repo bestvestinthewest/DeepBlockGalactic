@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IWaterLoggable;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.fluid.IFluidState;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
@@ -57,24 +56,6 @@ public class FlareBlock extends Block implements IWaterLoggable {
         return true;
     }
 
-	@Nonnull
-    @Override
-    public IFluidState getFluidState(BlockState state)
-    {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
-    }
-
-	@Nonnull
-    @Override
-    public BlockState updatePostPlacement(BlockState state, Direction facing, BlockState neighborState, IWorld world, BlockPos pos, BlockPos neighborPos)
-    {
-        if (state.get(WATERLOGGED))
-        {
-            world.getPendingFluidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-        }
-
-        return super.updatePostPlacement(state, facing, neighborState, world, pos, neighborPos);
-    }
 
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext ctx)

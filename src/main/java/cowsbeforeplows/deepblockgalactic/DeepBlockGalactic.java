@@ -19,8 +19,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.dimension.DimensionType;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -54,9 +52,6 @@ public class DeepBlockGalactic {
         ItemInit.ITEMS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
         ModEntityTypes.ENTITY_TYPES.register(modEventBus);
-        BiomeInit.BIOMES.register(modEventBus);
-        DimInit.CHUNKS_GEN.register(modEventBus);
-        DimInit.DIMENSIONS.register(modEventBus);
         SoundInit.SOUNDS.register(modEventBus);
         
         instance = this;

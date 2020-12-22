@@ -21,7 +21,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ItemInit {
 	
-	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, DeepBlockGalactic.MOD_ID);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, DeepBlockGalactic.MOD_ID);
 	
 	//Support Tools
 	public static final RegistryObject<GrapplingHook> GRAPPLING_HOOK = ITEMS.register("grappling_hook", () -> new GrapplingHook(new Item.Properties().group(DeepBlockGalactic.TAB).maxStackSize(1)));

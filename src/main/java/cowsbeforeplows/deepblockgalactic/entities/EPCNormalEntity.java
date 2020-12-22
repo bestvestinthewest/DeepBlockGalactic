@@ -9,11 +9,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.network.IPacket;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.EntityRayTraceResult;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
@@ -41,7 +38,7 @@ public class EPCNormalEntity extends ProjectileItemEntity {
 			}
 			
 			else {
-				entity.attackEntityFrom(DamageSource.causeIndirectDamage(this, this.getThrower()), 2.0f);
+//				entity.attackEntityFrom(DamageSource.causeIndirectDamage(this, this.get), 2.0f);
 			}
 			
 			if(!this.world.isRemote()) { 

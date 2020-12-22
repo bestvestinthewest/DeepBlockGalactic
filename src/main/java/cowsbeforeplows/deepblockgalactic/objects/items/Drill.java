@@ -2,21 +2,15 @@ package cowsbeforeplows.deepblockgalactic.objects.items;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
-import com.google.common.collect.Sets;
-
 import cowsbeforeplows.deepblockgalactic.util.IBreakValidator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ToolItem;
 import net.minecraft.network.play.server.SChangeBlockPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -24,7 +18,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -101,9 +96,9 @@ public class Drill extends PickaxeItem {
 	public List<BlockPos> getBreakBlocks(World world, PlayerEntity player, int radius) {
 		ArrayList<BlockPos> potentialBrokenBlocks = new ArrayList<>();
 
-		Vec3d eyePosition = player.getEyePosition(1);
-		Vec3d rotation = player.getLook(1);
-		Vec3d combined = eyePosition.add(rotation.x * 5, rotation.y * 5, rotation.z * 5);
+		Vector3d eyePosition = player.getEyePosition(1);
+		Vector3d rotation = player.getLook(1);
+		Vector3d combined = eyePosition.add(rotation.x * 5, rotation.y * 5, rotation.z * 5);
 
 		BlockRayTraceResult rayTraceResult = world.rayTraceBlocks(new RayTraceContext(eyePosition, combined, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, player));
 

@@ -54,7 +54,7 @@ public class ImpactAxeEntity extends ProjectileItemEntity {
 	protected void onImpact(RayTraceResult result) {
 		if (result.getType() == RayTraceResult.Type.ENTITY) {
 			Entity entity = ((EntityRayTraceResult)result).getEntity();
-			entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 8.0f);
+			entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.func_234616_v_()), 8.0f);
 			
 			this.playSound(SoundInit.AXE_IMPACT_ENTITY.get(), 0.25f, 1.0f);
 			
@@ -75,12 +75,6 @@ public class ImpactAxeEntity extends ProjectileItemEntity {
 				this.setNoGravity(true);
 			}
 		}
-	}
-	
-	@Override
-	public LivingEntity getThrower() {
-
-		return this.owner;
 	}
 	
 	@Override

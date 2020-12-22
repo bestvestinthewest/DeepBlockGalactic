@@ -17,10 +17,11 @@ out
 build
 .gradle
 
-
 # other
 eclipse
 run
 
 # Files from Forge MDK
 forge*changelog.txt
+CREDITS.txt
+changelog.txt
