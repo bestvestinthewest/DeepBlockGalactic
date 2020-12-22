@@ -27,7 +27,7 @@ public class ImpactAxe extends Item {
 	         ImpactAxeEntity impactAxeEntity = new ImpactAxeEntity(worldIn, playerIn);
 	         impactAxeEntity.setItem(itemstack);
 	         impactAxeEntity.setPosition(playerIn.getPosX(), playerIn.getPosY() + 1.5D, playerIn.getPosZ());
-	         impactAxeEntity.shoot(playerIn.rotationPitch, playerIn.rotationYaw, 2.0F, 0.5F, 0.25F);
+	         impactAxeEntity.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 2.0F, 0.5F, 0.25F);
 	         worldIn.addEntity(impactAxeEntity);
 	      }
 		

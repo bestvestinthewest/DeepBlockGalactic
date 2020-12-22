@@ -27,7 +27,7 @@ public class Flare extends Item {
 	         FlareEntity flareEntity = new FlareEntity(worldIn, playerIn);
 	         flareEntity.setItem(itemstack);
 	         flareEntity.setPosition(playerIn.getPosX(), playerIn.getPosY() + 1.5D, playerIn.getPosZ());
-	         flareEntity.shoot(playerIn.rotationPitch, playerIn.rotationYaw, 2.0F, 0.5F, 0.25F);
+	         flareEntity.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 2.0F, 0.5F, 0.25F);
 	         worldIn.addEntity(flareEntity);
 	      }
 		

@@ -14,6 +14,7 @@ import cowsbeforeplows.deepblockgalactic.init.ItemInit;
 import cowsbeforeplows.deepblockgalactic.init.ModEntityTypes;
 import cowsbeforeplows.deepblockgalactic.init.SoundInit;
 import cowsbeforeplows.deepblockgalactic.objects.blocks.FlareBlock;
+import cowsbeforeplows.deepblockgalactic.util.KeybindHandler;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -26,6 +27,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -87,6 +89,12 @@ public class DeepBlockGalactic {
 	@SubscribeEvent
 	public void onServerStarting(FMLServerStartingEvent event) {
 
+	}
+	
+	@SubscribeEvent
+	public void onClientSetup(FMLClientSetupEvent event) {
+		MinecraftForge.EVENT_BUS.register(new KeybindHandler());
+		KeybindHandler.onClientSetup();
 	}
 	
 	public static final ItemGroup TAB = new ItemGroup("dbgtab") {

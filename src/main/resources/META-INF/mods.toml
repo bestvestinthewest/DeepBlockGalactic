@@ -29,7 +29,7 @@ displayURL="http://example.com/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks to Ghost Ship Games for developing Deep Rock Galactic #optional
+credits="Thanks to Ghost Ship Games for developing Deep Rock Galactic" #optional
 # A text field displayed in the mod UI
 authors="cowsbeforeplows" #optional
 # The description text for the mod (multi line!) (#mandatory)
@@ -47,8 +47,4 @@ This mod adds weapons and features from the co-op mining shooter Deep Rock Galac
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
-    side="BOTH"
-# This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.16.4,1.17)"
-    ordering="NONE"
     side="BOTH"

@@ -28,7 +28,7 @@ public class SatchelCharge extends Item{
 	         SatchelChargeEntity satchelChargeEntity = new SatchelChargeEntity(worldIn, playerIn);
 	         satchelChargeEntity.setItem(itemstack);
 	         satchelChargeEntity.setPosition(playerIn.getPosX(), playerIn.getPosY() + 1.5D, playerIn.getPosZ());
-	         satchelChargeEntity.shoot(playerIn.rotationPitch, playerIn.rotationYaw, 2.0F, 0.5F, 0.25F);
+	         satchelChargeEntity.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 2.0F, 0.5F, 0.25F);
 	         worldIn.addEntity(satchelChargeEntity);
 	      }
 		

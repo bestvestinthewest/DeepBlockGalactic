@@ -24,7 +24,7 @@ public class FlareGun extends Item{
 		 if (!worldIn.isRemote) {
 				FlareBoltEntity flareBolt = new FlareBoltEntity(playerIn, worldIn, ItemInit.FLARE_BOLT.get());
 				flareBolt.setPosition(playerIn.getPosX(), playerIn.getPosY() + 1.5D, playerIn.getPosZ());
-				flareBolt.shoot(playerIn.rotationPitch, playerIn.rotationYaw, 0, 2.5f, 0.0f);
+				flareBolt.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0, 2.5f, 0.0f);
 				worldIn.addEntity(flareBolt);	
 				worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundInit.FLARE_GUN_SHOT.get(), SoundCategory.PLAYERS, 0.5f, 1.0f);
 			}
