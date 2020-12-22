@@ -91,12 +91,6 @@ public class DeepBlockGalactic {
 
 	}
 	
-	@SubscribeEvent
-	public void onClientSetup(FMLClientSetupEvent event) {
-		MinecraftForge.EVENT_BUS.register(new KeybindHandler());
-		KeybindHandler.onClientSetup();
-	}
-	
 	public static final ItemGroup TAB = new ItemGroup("dbgtab") {
 	    @Override
 	    public ItemStack createIcon(){

@@ -6,9 +6,11 @@ import org.apache.logging.log4j.Logger;
 import cowsbeforeplows.deepblockgalactic.DeepBlockGalactic;
 import cowsbeforeplows.deepblockgalactic.client.render.FlareBoltRenderer;
 import cowsbeforeplows.deepblockgalactic.init.ModEntityTypes;
+import cowsbeforeplows.deepblockgalactic.util.KeybindHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +30,10 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.EPC_CHARGED_ENTITY.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer(), 3.0f, false));
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FLARE_ENTITY.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer(), 1.0f, false));
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FLARE_BOLT_ENTITY.get(), FlareBoltRenderer::new);
+		
+		MinecraftForge.EVENT_BUS.register(new KeybindHandler());
+		KeybindHandler.onClientSetup();
+		LOGGER.debug("Deep Block Galactic Client Setup Complete");
 		
 		LOGGER.debug("Deep Block Galactic Client Mod Event Subscriber has been set up!");
 	}
